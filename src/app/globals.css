@@ -1,0 +1,91 @@
+@import url("https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --font-general-sans: "General Sans", system-ui, sans-serif;
+  --paper: #F7F7F5;
+  --forest: #1A3C2B;
+  --gridline: rgba(58, 58, 56, 0.2);
+  --coral: #FF8C69;
+  --mint: #9EFFBF;
+  --gold: #F4D35E;
+}
+
+* {
+  cursor: none !important;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  border-radius: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--paper);
+  color: var(--forest);
+  font-family: var(--font-general-sans), system-ui, -apple-system, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: var(--forest);
+  color: var(--paper);
+}
+
+::-moz-selection {
+  background-color: var(--forest);
+  color: var(--paper);
+}
+
+@keyframes orbit {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.2;
+  }
+}
+
+@keyframes turbine-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-orbit {
+  animation: orbit 20s linear infinite;
+}
+
+.animate-blink {
+  animation: blink 2s ease-in-out infinite;
+}
+
+.animate-turbine {
+  animation: turbine-spin 8s linear infinite;
+}
